@@ -88,16 +88,18 @@
                     <td th:text="${student.email}"></td>
                     <td th:text="${student.password}"></td>
                     <td th:text="${student.course.name}"></td>
-                    <td>
+                   <td>
                         <a th:href="@{/students/edit/{id}(id=${student.id})}">Edit</a> 
                        </td>
                        <td>
                         <a th:href="@{/students/delete/{id}(id=${student.id})}">Delete</a>
-                    </td>
+                    </td> 
                 </tr>
             </tbody>
         </table>
         <a th:href="@{/students/create}" class="create-link">Create New Student</a>
+        
+        <a th:href="@{/menu}">Back to Menu</a>
     </div>
 </body>
 </html>

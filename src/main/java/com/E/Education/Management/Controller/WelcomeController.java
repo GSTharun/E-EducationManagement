@@ -31,6 +31,15 @@ public class WelcomeController {
 		return "parent"; // Create a "parent.html" Thymeleaf template similarly.
 	}
 
+	@GetMapping("/menu")
+	public String menuPage() {
+		return "menu"; // Create a "menu.html" Thymeleaf template similarly.
+	}
+	
+	@GetMapping("/studentMenu")
+	public String studentmenu() {
+		return "studentMenu"; // Create a "menu.html" Thymeleaf template similarly.
+	}
 
 
 	
