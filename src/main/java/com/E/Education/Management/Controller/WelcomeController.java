@@ -40,7 +40,25 @@ public class WelcomeController {
 	public String studentmenu() {
 		return "studentMenu"; // Create a "menu.html" Thymeleaf template similarly.
 	}
+		
+	@GetMapping("/FacultyLogin")
+	public String facultyPages() {
+		return "FacultyLogin"; // Create a "student.html" Thymeleaf template similarly.
+	}
 
+	@GetMapping("/FacultyMenu")
+	public String FacultyMenu() {
+		return "FacultyMenu"; // Create a "menu.html" Thymeleaf template similarly.
+	}
+	
+	@GetMapping("/ParentLogin")
+	public String parentPages() {
+		return "ParentLogin"; // Create a "student.html" Thymeleaf template similarly.
+	}
 
+	@GetMapping("/ParentMenu")
+	public String ParentMenu() {
+		return "ParentMenu"; // Create a "menu.html" Thymeleaf template similarly.
+	}
 	
 }

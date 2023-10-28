@@ -33,7 +33,7 @@
         header ul li {
             display: inline-block;
             list-style: none;
-            margin: 0 30px;
+            margin: 0 25px;
         }
 
         header ul li:last-child {
@@ -97,37 +97,55 @@
             <div class="logo">
                 <a href="#"><img th:src="@{/images.jpeg}" alt=""></a>
             </div>
+            
             <nav>
                 <ul>
-                    <li><a href="#">Course</a>
+                
+                <li>Welcome,<span th:text="${session.facultyName}"></span>!</li>
+                
+                    <li><a href="#">Syllabus</a>
                         <ul class="submenu">
-                            <li><a th:href="@{http://localhost:8080/courses}">Register Course</a></li>
-                            
+                            <li><a th:href="@{http://localhost:8080/courses}">View</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Student</a>
+                    <li><a href="#">Time Table</a>
                         <ul class="submenu">
-                           <li><a th:href="@{http://localhost:8080/students}">Register Student</a></li>
-                           
-                        </ul>
-                    </li>
-                    
-                     <li><a href="#">Faculty</a>
-                        <ul class="submenu">
-                           <li><a th:href="@{http://localhost:8080/faculties}">Register Faculty</a></li>
+                           <li><a th:href="@{http://localhost:8080/students}">View</a></li>
                         </ul>
                     </li>
                     
-                     <li><a href="#">Parent</a>
+                     <li><a href="#">Material</a>
                         <ul class="submenu">
-                           <li><a th:href="@{http://localhost:8080/courses}">Register Parent</a></li>
+                           <li><a th:href="@{http://localhost:8080/courses}">View</a></li>
                         </ul>
                     </li>
                     
-                    <li><a th:href="@{http://localhost:8080/courses}">Contact</a></li>
+                     <li><a href="#">Attendance</a>
+                        <ul class="submenu">
+                           <li><a th:href="@{http://localhost:8080/courses}">View</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li><a href="#">Profile</a>
+                       
+                    </li>
+                    
+                    <li><a href="#">Result</a>
+                        <ul class="submenu">
+                           <li><a th:href="@{http://localhost:8080/courses}">View</a></li>
+                        </ul>
+                    </li>
+                    
+                   <li><a th:href="@{http://localhost:8080/courses}">FeedBack</a></li>
+                    
+                   <!--  <li><a th:href="@{http://localhost:8080/profile}">Profile</a></li> -->
                     
                     <li><a th:href="@{http://localhost:8080/}">Logout</a></li>
+                    
+                    
                 </ul>
+                
+                 
             </nav>
             
             

@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Edit Student</title>
+    <title>Create Faculty</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -38,9 +38,7 @@
         }
 
         input[type="text"],
-        input[type="email"],
-        input[type="password"],
-        select {
+        input[type="password"] {
             width: 100%;
             padding: 10px;
             margin-bottom: 15px;
@@ -66,26 +64,24 @@
     </style>
 </head>
 <body>
-    <h1>Edit Student</h1>
+    <h1>Create Faculty</h1>
     <div class="container">
-        <form method="post" th:object="${student}" th:action="@{/students/edit/{id}(id=${student.id})}">
-            <input type="hidden" th:field="*{id}">
-            
+        <form th:action="@{/faculties/create}" th:object="${faculty}" method="post">
             <label for="firstName">First Name:</label>
-            <input type="text" id="firstName" name="firstName" th:field="*{firstName}" required><br>
-            
+            <input type="text" id="firstName" th:field="*{firstName}" />
+
             <label for="lastName">Last Name:</label>
-            <input type="text" id="lastName" name="lastName" th:field="*{lastName}" required><br>
-            
+            <input type="text" id="lastName" th:field="*{lastName}" />
+
             <label for="email">Email:</label>
-            <input type="email" id="email" name="email" th:field="*{email}" required><br>
-            
-             <label for="password">Password:</label>
-            <input type="password" id="password" name="password" th:field="*{password}" required><br>
-            
-            <input type="submit" value="Save">
+            <input type="text" id="email" th:field="*{email}" />
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" th:field="*{password}" />
+
+            <input type="submit" value="Create" />
         </form>
-        <a th:href="@{/students}">Back to Student List</a>
+        <a th:href="@{/faculties}">Back to Faculty List</a>
     </div>
 </body>
 </html>
