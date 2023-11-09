@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Parent List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 40px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #333;
+            color: #fff;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+            margin-right: 10px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .create-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Parent List</h1>
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th>Gender</th>
+                    <th colspan="2"><center>Actions</center></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="parent : ${parents}">
+                    <td th:text="${parent.id}"></td>
+                    <td th:text="${parent.firstName}"></td>
+                    <td th:text="${parent.lastName}"></td>
+                    <td th:text="${parent.email}"></td>
+                    <td th:text="${parent.password}"></td>
+                    <td th:text="${parent.gender}"></td>
+                    <td>
+                        <a th:href="@{/parents/edit/{id}(id=${parent.id})}">Edit</a>
+                    </td>
+                    <td>
+                        <a th:href="@{/parents/delete/{id}(id=${parent.id})}">Delete</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <a th:href="@{/parents/create}" class="create-link">Create New Parent</a>
+        
+        <a th:href="@{/menu}">Back to Menu</a>
+    </div>
+</body>
+</html>

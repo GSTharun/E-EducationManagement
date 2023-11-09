@@ -22,6 +22,11 @@ public class Student {
     @ManyToOne
     @JoinColumn(name = "course_id")
     private Course course; // This represents the relationship with the Course entity
+    
+    @ManyToOne
+    @JoinColumn(name= "parent_id")
+    private Parent parent;
+    
 
     public Long getId() {
 		return id;
@@ -37,6 +42,14 @@ public class Student {
 
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
+	}
+
+	public Parent getParent() {
+		return parent;
+	}
+
+	public void setParent(Parent parent) {
+		this.parent = parent;
 	}
 
 	public String getLastName() {
