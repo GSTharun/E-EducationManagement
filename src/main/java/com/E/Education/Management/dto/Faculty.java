@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Lob;
 
 @Entity
 public class Faculty {
@@ -17,6 +18,22 @@ public class Faculty {
 	private String email;
 	private String password;
 
+	private String fileName;
+
+    @Lob
+    private byte[] fileData;
+
+    // Constructors, getters, setters
+
+    // Default constructor
+    public Faculty() {
+    }
+
+    // Constructor without ID
+    public Faculty(String fileName, byte[] fileData) {
+        this.fileName = fileName;
+        this.fileData = fileData;
+    }
 	public Long getId() {
 		return id;
 	}
@@ -56,5 +73,21 @@ public class Faculty {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	
+	public String getFileName() {
+        return fileName;
+    }
+
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
+    }
+
+    public byte[] getFileData() {
+        return fileData;
+    }
+
+    public void setFileData(byte[] fileData) {
+        this.fileData = fileData;
+    }
 
 }

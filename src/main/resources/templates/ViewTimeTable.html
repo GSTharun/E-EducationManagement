@@ -1,0 +1,16 @@
+<!-- src/main/resources/templates/student/view-timetable.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Timetable</title>
+</head>
+<body>
+    <h2>View Timetable</h2>
+    <ul>
+        <li th:each="file : ${timetableFiles}">
+            <a th:href="@{/path/to/timetable/files/{filename}(filename=${file})}" th:text="${file}"></a>
+        </li>
+    </ul>
+</body>
+</html>

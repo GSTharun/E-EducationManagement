@@ -18,8 +18,8 @@ public class Student {
     private String lastName;
     private String email;
     private String password;
-
-    @ManyToOne
+    
+	@ManyToOne
     @JoinColumn(name = "course_id")
     private Course course; // This represents the relationship with the Course entity
     

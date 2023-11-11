@@ -1,5 +1,6 @@
 package com.E.Education.Management.Controller;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +11,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.E.Education.Management.Repo.FacultyRepo;
 import com.E.Education.Management.dto.Faculty;
@@ -66,4 +69,34 @@ public class FacultyController {
 		facultyRepository.deleteById(id);
 		return "redirect:/faculties";
 	}
+	
+	@GetMapping("/timetable")
+	public String timetable(Model model) {
+		model.addAttribute("faculty", new Faculty());
+		return "faculty/timetable";
+	}
+
+	@PostMapping("/upload")
+    public String upload(@RequestParam("file") MultipartFile file) {
+        // Handle file upload logic
+        if (!file.isEmpty()) {
+            try {
+                // Save file to database
+                Faculty faculty = new Faculty();
+                faculty.setFileName(file.getOriginalFilename());
+                faculty.setFileData(file.getBytes());
+                facultyRepository.save(faculty);
+
+                System.out.println("File saved to the database. ID: " + faculty.getId());
+            } catch (IOException e) {
+                System.out.println("Error handling file upload: " + e.getMessage());
+                // Handle the exception
+            }
+        } else {
+            System.out.println("No file received");
+        }
+
+        return "redirect:/faculty/timetable";
+	}
+
 }

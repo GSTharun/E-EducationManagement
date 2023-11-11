@@ -1,0 +1,15 @@
+<!-- src/main/resources/templates/faculty/timetable.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Faculty Timetable</title>
+</head>
+<body>
+    <h2>Upload Timetable</h2>
+    <form th:action="@{/faculties/upload}" th:object="${faculties}" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".pdf, .doc, .docx">
+        <button type="submit">Upload</button>
+    </form>
+</body>
+</html>
