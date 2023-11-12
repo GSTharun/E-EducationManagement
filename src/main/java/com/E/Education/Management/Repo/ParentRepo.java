@@ -6,10 +6,13 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import com.E.Education.Management.dto.Parent;
+import com.E.Education.Management.dto.Student;
 
 @Repository
 public interface ParentRepo extends JpaRepository<Parent, Long> {
 
 	Optional<Parent> findByEmail(String email);
+
+	
 
 }
