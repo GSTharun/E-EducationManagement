@@ -9,6 +9,7 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 
 @Entity
@@ -28,6 +29,8 @@ public class Parent {
 
     @OneToMany(mappedBy = "parent", cascade = CascadeType.ALL)
     private List<Student> students = new ArrayList<>();
+    
+    
 
     public enum Gender {
         FATHER, MOTHER

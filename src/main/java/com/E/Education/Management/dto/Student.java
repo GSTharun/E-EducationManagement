@@ -24,7 +24,7 @@ public class Student {
     private Course course; // This represents the relationship with the Course entity
     
     @ManyToOne
-    @JoinColumn(name= "parent_id")
+    @JoinColumn(name="parent_id")
     private Parent parent;
     
 

@@ -111,8 +111,9 @@
                 <label for="guardian">Guardian</label>
             </div>
             
+       
             <label for="student">Students:</label>
-            <select id="student" name="studentIds" multiple="multiple" size="2">
+				<select id="student" name="studentIds" multiple="multiple" size="2">
                 <th:block th:each="student : ${students}">
                     <option th:value="${student.id}" th:text="${student.firstName + ' ' + student.lastName}"></option>
                 </th:block>
