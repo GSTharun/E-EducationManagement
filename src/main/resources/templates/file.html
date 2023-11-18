@@ -7,9 +7,6 @@
   <title>FILE UPLOAD</title>
 
   <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />  -->
   <script type="text/javascript" th:src="@{/webjars/jquery/jquery.min.js}"></script>
   <script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
 </head>
@@ -32,10 +29,7 @@
           <tr th:each="file : ${file}">
             <td>[[${file.name}]]</td>
             <td><a th:href="@{${file.url}}">Download</a></td>
-            <td>
-              <a th:href="@{'/files/delete/' + ${file.name}}" th:fileName="${file.name}" id="btnDelete"
-                title="Delete this file" class="fa-regular fa-trash-can icon-dark btn-delete"></a>
-            </td>
+            
           </tr>
         </tbody>
       </table>
@@ -68,6 +62,8 @@
     </div>
   </div>
   
+  <center><button type="button"  onclick="history.back();">Back</button></center>
+  
   <div th:replace="fragments/footer :: footer"></div>
 
   <script type="text/javascript">
@@ -83,7 +79,7 @@
       });
     });
   </script>
-
+	
 </body>
 
 </html>

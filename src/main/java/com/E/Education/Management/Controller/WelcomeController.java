@@ -61,4 +61,9 @@ public class WelcomeController {
 		return "ParentMenu"; // Create a "menu.html" Thymeleaf template similarly.
 	}
 	
+	@GetMapping("/profile")
+	public String StudentProfile() {
+		return "profile"; // Create a "menu.html" Thymeleaf template similarly.
+	}
+	
 }

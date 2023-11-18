@@ -10,11 +10,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class AdminController {
 
- @GetMapping("/login")
+ @GetMapping("/login") 
  public String login() {
      return "/login";
  }
-
+ 
  @PostMapping("/login")
  public String authenticate(@RequestParam String email, @RequestParam String password, Model model) {
      // Replace this logic with your actual admin authentication mechanism

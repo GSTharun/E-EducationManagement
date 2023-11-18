@@ -99,6 +99,9 @@
             </div>
             <nav>
                 <ul>
+                
+                <li>Welcome,<span th:text="${session.studentName}"></span>!</li>
+                
                     <li><a href="https://www.bcu.ac.in/">Syllabus</a>
                         <ul class="submenu">
                         </ul>
@@ -110,17 +113,6 @@
                         </ul>
                     </li>
                     
-                     <li><a href="#">Material</a>
-                        <ul class="submenu">
-                           <li><a th:href="@{http://localhost:8080/pullrequest}">View</a></li>
-                        </ul>
-                    </li>
-                    
-                     <li><a href="#">Attendance</a>
-                        <ul class="submenu">
-                           <li><a th:href="@{http://localhost:8080/pullrequest}">View</a></li>
-                        </ul>
-                    </li>
                     
                     <li><a href="#">Result</a>
                         <ul class="submenu">
