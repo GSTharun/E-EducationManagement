@@ -14,6 +14,12 @@
             box-sizing: border-box;
             outline: none;
         }
+        .logo img {
+            /* Set the width and height as needed */
+            width: 120px; /* Adjust the width to your preference */
+            height: auto; /* Maintain the aspect ratio */
+            /* Additional styling if needed */
+        }
 
         body {
             font-family: 'Oswald', sans-serif;
@@ -94,8 +100,8 @@
 
     <main>
         <header>
-            <div class="logo">
-                <a href="#"><img th:src="@{/images.jpeg}" alt=""></a>
+           <div class="logo">
+                 <a href="#"><img th:src="@{/images/logo.png}" alt=""></a>
             </div>
             
             <nav>

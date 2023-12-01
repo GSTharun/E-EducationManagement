@@ -1,10 +1,146 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Bar With Dropdown Using Thymeleaf</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <style>
+        /* YOUR INTERNAL STYLE HERE */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            outline: none;
+        }
+        
+        .logo img {
+            /* Set the width and height as needed */
+            width: 120px; /* Adjust the width to your preference */
+            height: auto; /* Maintain the aspect ratio */
+            /* Additional styling if needed */
+        }
+
+        body {
+            font-family: 'Oswald', sans-serif;
+            overflow-x: hidden;
+            color: #42424A;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 0 249px;
+            border-bottom: 1px solid #dbdbdb;
+        }
+
+        header ul li {
+            display: inline-block;
+            list-style: none;
+            margin: 0 25px;
+        }
+
+        header ul li:last-child {
+            margin-right: 0;
+        }
+
+        header ul li a {
+            text-decoration: none;
+            color: #42424a;
+            padding: 22px 0;
+            display: inline-block;
+            transition: all ease 0.3s;
+            font-size: 18px;
+        }
+
+        header ul li a:hover {
+            color: #ff8a00;
+        }
+
+        /* submenu style */
+        header ul .submenu {
+            position: absolute;
+            width: 200px;
+            background-color: #ffffff;
+            box-shadow: 0 20px 45px #00000020;
+            margin-top: -50px;
+            opacity: 0;
+            z-index: -999;
+            transition: all ease 0.5s;
+        }
+
+        header ul li:hover .submenu {
+            z-index: 99;
+            opacity: 1;
+            margin-top: 0;
+        }
+
+        header ul .submenu li {
+            margin: 0;
+            width: 100%;
+        }
+
+        header ul .submenu li a {
+            padding: 15px 20px;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .hero_sec {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+    </style>
 </head>
 <body>
 
+    <main>
+        <header>
+            <div class="logo">
+                <a href="#"><img th:src="@{/images/logo.png}" alt=""></a>
+            </div>
+            <nav>
+                <ul>
+                
+                <li>Welcome,<span th:text="${session.parentName}"></span>!</li>
+                
+                    <li><a href="https://www.bcu.ac.in/">Syllabus</a>
+                        <ul class="submenu">
+                        </ul>
+                    </li>
+                    <li><a href="#">Time Table</a>
+                        <ul class="submenu">
+                           <li><a th:href="@{http://localhost:8080/pullrequest}">BCA</a></li>
+                           
+                        </ul>
+                    </li>
+                    
+                    
+                    <li><a href="#">Result</a>
+                        <ul class="submenu">
+                           <li><a th:href="@{http://localhost:8080/pullrequest}">View</a></li>
+                        </ul>
+                    </li>
+                    
+                   <li><a th:href="@{http://localhost:8080/courses}">FeedBack</a></li>
+                    
+                    <li><a th:href="@{http://localhost:8080/profilep}">Profile</a></li>
+                    
+                    <li><a th:href="@{http://localhost:8080/}">Logout</a></li>
+                </ul>
+            </nav>
+            
+            
+        </header>
+        <section class="hero_sec">
+            <img th:src="@{/images/herobg.png}" alt="">
+        </section>
+    </main>
+    
 </body>
 </html>

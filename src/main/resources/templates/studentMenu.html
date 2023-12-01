@@ -14,6 +14,13 @@
             box-sizing: border-box;
             outline: none;
         }
+        
+        .logo img {
+            /* Set the width and height as needed */
+            width: 120px; /* Adjust the width to your preference */
+            height: auto; /* Maintain the aspect ratio */
+            /* Additional styling if needed */
+        }
 
         body {
             font-family: 'Oswald', sans-serif;
@@ -83,10 +90,10 @@
         }
 
         .hero_sec {
-            display: flex;
+            display: inline-block;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            height: 30vh;
         }
     </style>
 </head>
@@ -95,7 +102,7 @@
     <main>
         <header>
             <div class="logo">
-                <a href="#"><img th:src="@{/images.jpeg}" alt=""></a>
+               <a href="#"><img th:src="@{/images/logo.png}" alt=""></a>
             </div>
             <nav>
                 <ul>
@@ -131,7 +138,7 @@
             
         </header>
         <section class="hero_sec">
-            <img th:src="@{/images/herobg.png}" alt="">
+            <img th:src="@{/images/student.jpg}" alt="">
         </section>
     </main>
     

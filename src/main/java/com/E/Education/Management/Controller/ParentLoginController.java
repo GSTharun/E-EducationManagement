@@ -39,14 +39,15 @@ public class ParentLoginController {
 				// Successful login
 				session.setAttribute("parentFName",parent.getFirstName());
             	session.setAttribute("parentName",parent.getLastName());
+            	session.setAttribute("parentEmail",parent.getEmail());
             	session.setAttribute("relationToStudent",parent.getGender());
-				return "redirect:/parentMenu"; // Redirect to the parent dashboard or another parent page
+				return "redirect:/ParentMenu"; // Redirect to the parent dashboard or another parent page
 			}
 		}
 
 		// Authentication failed, add an error message to the model and return to the login page
 		model.addAttribute("error", "Invalid email or password");
-		return "plogin"; // Return to the parent login page
+		return "parentLogin"; // Return to the parent login page
 	}
 }
 
