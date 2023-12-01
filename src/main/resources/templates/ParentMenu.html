@@ -89,12 +89,18 @@
             width: 100%;
         }
 
-        .hero_sec {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
+      .hero_sec {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh; /* Set the height to 100% of the viewport height */
+}
+
+.hero_sec img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio and cover the entire container */
+}
     </style>
 </head>
 <body>
@@ -138,7 +144,7 @@
             
         </header>
         <section class="hero_sec">
-            <img th:src="@{/images/herobg.png}" alt="">
+            <img th:src="@{/images/parent.jpg}" alt="">
         </section>
     </main>
     
